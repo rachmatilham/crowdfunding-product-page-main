@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --moderate-cyan: 176deg 50% 47%;
+    --dark-cyan: 176deg 72% 28%;
+    --black: 0deg 0% 0%;
+    --dark-gray: 0deg 0% 48%;
+  }
+  body {
+    font-size: 16px;
+    font-family: "Commissioner", sans-serif;
+  }
+  button {
+    @apply border-none bg-moderateCyan text-white font-commissioner font-bold;
+  }
+  button:hover {
+    @apply cursor-pointer bg-darkCyan;
+  }
+  h3 {
+    @apply text-black;
+  }
+  p {
+    @apply pr-[3px] text-darkGray text-[0.87em] leading-[1.73] md:text-base md:leading-[1.9];
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield !important;
+  }
+}
+
+@layer components {
+  .hero-img {
+    @apply w-full h-[300px] md:h-[400px] bg-[url(./images/image-hero-mobile.jpg)] md:bg-[url(./images/image-hero-desktop.jpg)] bg-no-repeat bg-cover absolute -z-10;
+  }
+
+  .overlay {
+    @apply absolute top-0 left-0 w-full h-full bg-[#7a7a7a] bg-opacity-70 hidden;
+  }
+
+  .stats-li-before {
+    @apply before:content-[''] before:w-20 before:h-[1px] before:block before:absolute before:top-[7px] before:left-[calc(50%-40px)] before:bg-[#7a7a7a] before:bg-opacity-50 md:before:w-[1px] md:before:h-[60px] md:before:top-[47px] md:before:-left-[50px];
+  }
+
+  .card {
+    @apply mt-6 md:mt-[26px] pt-[22px] px-[23px] pb-6 md:pt-[29px] md:px-[33px] md:pb-[30px] w-full rounded-[10px] border border-solid border-[#7a7a7a] border-opacity-40 bg-white;
+  }
+
+  .modal-selection-before {
+    @apply before:absolute before:top-0 before:left-0 before:content-[''] before:block before:w-full before:h-[1px] before:bg-darkGray before:opacity-50;
+  }
+
+  .modal-card {
+    @apply md:mt-[25px] p-0 active:border-[1px] active:border-solid active:border-moderateCyan;
+  }
+  .card-content-container {
+    @apply pt-[22px] px-[23px] pb-[24px] md:w-full md:pt-[31px] md:px-[26px] md:pb-[30px] md:grid md:justify-between md:items-center md:grid-cols-[80%_auto] md:relative;
+  }
+  .input-container {
+    @apply flex items-center hover:cursor-pointer md:items-start;
+  }
+
+  .input-radio {
+    @apply mr-[15px] w-6 h-6 md:mr-[25px] hover:cursor-pointer;
+  }
+  .input-heading {
+    @apply text-[0.9em] md:text-[1em] font-bold;
+  }
+  .input-heading-p {
+    @apply font-medium md:mt-0 md:ml-4 md:text-[1em] md:leading-normal text-moderateCyan;
+  }
+
+  .main {
+    @apply mt-[21px] md:mt-[11px] md:text-[0.94em] md:col-span-2;
+  }
+
+  .pledge-container {
+    @apply text-center relative md:col-span-2 hidden;
+  }
+  .pledge {
+    @apply pt-[26px] pb-[22px] before:absolute before:top-0 before:left-0 before:content-[''] before:block before:w-full before:h-[1px] before:bg-darkGray before:opacity-50 md:pt-[29px] md:px-[25px] md:flex md:justify-between md:items-center;
+  }
+  .pledge-form {
+    @apply mt-[18px] flex justify-center md:mt-0;
+  }
+  .pledge-input {
+    @apply pl-[22px] mr-3 w-[100px] h-12 rounded-3xl border border-solid border-darkGray text-left items-center font-commissioner font-bold active:border-moderateCyan overflow-hidden flex;
+  }
+  .pledge-input-number {
+    @apply ml-2 mr-[2px] font-commissioner font-bold text-[0.833em] overflow-hidden border-none outline-none hover:cursor-pointer;
+  }
+  .pledge-input-button {
+    @apply text-left text-[0.833em] pl-[27px] w-[116px] h-12 rounded-3xl border-0 bg-moderateCyan text-white font-commissioner font-bold hover:cursor-pointer hover:bg-darkCyan;
+  }
+
+  .modal-stock {
+    @apply flex items-center mt-[23px] md:mt-0 md:absolute md:top-[31px] md:right-[26px];
+  }
+  .modal-stock-number {
+    @apply mr-2 text-[1.1em];
+  }
+
+  .modal-selection {
+    @apply w-full max-w-[730px] relative top-[121px] md:top-[184px] m-auto py-[30px] md:py-[47px] px-[23px] md:px-[46px] rounded-[10px] border border-solid border-[#7a7a7a/0.2] bg-white hidden;
+  }
+  .modal-success {
+    @apply w-full max-w-[540px] relative top-[143px] m-auto pt-[30px] px-[23px] pb-10 rounded-[10px] border border-solid border-[#7a7a7a/0.2] bg-white text-center md:top-[460px] md:pt-[46px] md:px-[50px] md:pb-12 hidden;
+  }
+}
