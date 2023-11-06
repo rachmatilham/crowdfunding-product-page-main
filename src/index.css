@@ -8,6 +8,7 @@
     --dark-cyan: 176deg 72% 28%;
     --black: 0deg 0% 0%;
     --dark-gray: 0deg 0% 48%;
+    @apply bg-[#fafafa];
   }
   body {
     font-size: 16px;
