@@ -11,8 +11,7 @@ export default function Nav() {
       <img src="./images/logo.svg" alt="Crowdfunding Logo" />
       <div
         className={
-          "nav-icon w-4 h-4 bg-[url(../images/icon-hamburger.svg)] bg-no-repeat bg-contain hover:cursor-pointer md:hidden " +
-          (nav ? "bg-[url(../images/icon-close-menu.svg)]" : "")
+          "nav-icon " + (nav ? "bg-[url(../images/icon-close-menu.svg)]" : "")
         }
         onClick={handleNav}
       ></div>

@@ -38,6 +38,10 @@
     @apply w-full h-[300px] md:h-[400px] bg-[url(../images/image-hero-mobile.jpg)] md:bg-[url(../images/image-hero-desktop.jpg)] bg-no-repeat bg-cover absolute -z-10;
   }
 
+  .nav-icon {
+    @apply w-4 h-4 bg-[url(../images/icon-hamburger.svg)] bg-no-repeat bg-contain hover:cursor-pointer md:hidden;
+  }
+
   .overlay {
     @apply absolute top-0 left-0 w-full h-full bg-[#7a7a7a] bg-opacity-70 hidden;
   }
