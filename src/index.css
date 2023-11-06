@@ -35,7 +35,7 @@
 
 @layer components {
   .hero-img {
-    @apply w-full h-[300px] md:h-[400px] bg-[url(./images/image-hero-mobile.jpg)] md:bg-[url(./images/image-hero-desktop.jpg)] bg-no-repeat bg-cover absolute -z-10;
+    @apply w-full h-[300px] md:h-[400px] bg-[url(../images/image-hero-mobile.jpg)] md:bg-[url(../images/image-hero-desktop.jpg)] bg-no-repeat bg-cover absolute -z-10;
   }
 
   .overlay {
