@@ -31,7 +31,7 @@ export default function App() {
     <>
       <div className="hero-img"></div>
 
-      <main className="pt-0 px-[23px] pb-[63px] relative md:px-[165px] md:pb-[110px]">
+      <main className="pt-0 px-[23px] pb-[63px] relative md:px-[165px] md:pb-[95px]">
         <Nav />
         <Header setModal={setModal} />
         <Stats pledges={totalPledge} backers={totalBacker} />
