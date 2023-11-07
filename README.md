@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution page on Frontend Mentor](https://www.frontendmentor.io/)
+- Solution URL: [Solution page on Frontend Mentor](https://www.frontendmentor.io/solutions/crowdfunding-product-page-oWQCtAwrkw)
 - Live Site URL: [Github Pages](https://rachmatilham.github.io/crowdfunding-product-page-main/)
 
 ## My process
