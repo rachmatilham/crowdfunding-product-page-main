@@ -7,13 +7,15 @@ export default function ModalCard({
   main,
   handleProceed,
   currentStock,
+  toggle,
+  open,
 }) {
   const stock = currentStock[id];
   const [inputValue, setInputValue] = useState(heading.price);
 
   function handleInputClick(e) {
+    toggle(id);
     e.currentTarget.firstElementChild.checked = true;
-    e.currentTarget.parentElement.nextElementSibling.classList.add("block");
   }
 
   function handleSubmit(e) {
@@ -73,7 +75,12 @@ export default function ModalCard({
         </div>
       </div>
 
-      <div className="pledge-container">
+      <div
+        className={
+          "pledge-container " +
+          (open && (stock !== 0 || id === 0) ? "block" : "hidden")
+        }
+      >
         <div className="pledge">
           <p>Enter your pledge</p>
           <form className="pledge-form" onSubmit={handleSubmit}>

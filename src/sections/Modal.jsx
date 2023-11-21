@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { cardData } from "../CardData";
 import ModalCard from "../components/ModalCard";
 
@@ -25,6 +26,11 @@ export default function Modal({
     setModal(false);
     setSuccess(false);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }
+
+  const [activePledge, setActivePledge] = useState();
+  function togglePledge(key) {
+    setActivePledge(activePledge !== key ? key : null);
   }
 
   return (
@@ -54,6 +60,8 @@ export default function Modal({
             main={main}
             handleProceed={handleProceed}
             currentStock={currentStock}
+            toggle={togglePledge}
+            open={activePledge === id}
           />
         ))}
       </div>
