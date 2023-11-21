@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types */
-import { cardData } from "../CardData";
 
-export default function ArticleCard({ index, setModal, currentStock }) {
-  const { id, heading, main } = cardData[index];
-  const stock = currentStock[index];
+export default function ArticleCard({
+  id,
+  heading,
+  main,
+  setModal,
+  currentStock,
+}) {
+  const stock = currentStock[id];
 
   function handleModalButton() {
     if (stock != 0) setModal(true);
@@ -13,7 +17,7 @@ export default function ArticleCard({ index, setModal, currentStock }) {
   }
 
   return (
-    <div key={id}>
+    <div>
       <div className={"card " + (stock == 0 ? "opacity-50" : "")}>
         <div className="card-heading md:flex md:justify-between md:items-center">
           <h4 className="text-black text-[0.9em] md:text-[1.12em] font-bold leading-normal">

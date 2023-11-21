@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { cardData } from "../CardData";
 import ArticleCard from "../components/ArticleCard";
 
 export default function Article({ setModal, currentStock }) {
@@ -21,21 +22,16 @@ export default function Article({ setModal, currentStock }) {
       </p>
 
       <div className="selector-container pt-[10px] md:pt-[19px]">
-        <ArticleCard
-          index={1}
-          setModal={setModal}
-          currentStock={currentStock}
-        />
-        <ArticleCard
-          index={2}
-          setModal={setModal}
-          currentStock={currentStock}
-        />
-        <ArticleCard
-          index={3}
-          setModal={setModal}
-          currentStock={currentStock}
-        />
+        {cardData.slice(1).map(({ id, heading, main }) => (
+          <ArticleCard
+            key={id}
+            id={id}
+            heading={heading}
+            main={main}
+            setModal={setModal}
+            currentStock={currentStock}
+          />
+        ))}
       </div>
     </article>
   );

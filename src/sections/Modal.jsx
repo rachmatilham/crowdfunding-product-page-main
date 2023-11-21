@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { cardData } from "../CardData";
 import ModalCard from "../components/ModalCard";
 
 export default function Modal({
@@ -45,26 +46,16 @@ export default function Modal({
           the world?
         </p>
 
-        <ModalCard
-          index={0}
-          handleProceed={handleProceed}
-          currentStock={currentStock}
-        />
-        <ModalCard
-          index={1}
-          handleProceed={handleProceed}
-          currentStock={currentStock}
-        />
-        <ModalCard
-          index={2}
-          handleProceed={handleProceed}
-          currentStock={currentStock}
-        />
-        <ModalCard
-          index={3}
-          handleProceed={handleProceed}
-          currentStock={currentStock}
-        />
+        {cardData.map(({ id, heading, main }) => (
+          <ModalCard
+            key={id}
+            id={id}
+            heading={heading}
+            main={main}
+            handleProceed={handleProceed}
+            currentStock={currentStock}
+          />
+        ))}
       </div>
 
       <div className={"modal-success " + (success ? "block" : "")}>

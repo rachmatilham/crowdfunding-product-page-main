@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { cardData } from "../CardData";
 
-export default function ModalCard({ index, handleProceed, currentStock }) {
-  const { id, heading, main } = cardData[index];
-  const stock = currentStock[index];
+export default function ModalCard({
+  id,
+  heading,
+  main,
+  handleProceed,
+  currentStock,
+}) {
+  const stock = currentStock[id];
   const [inputValue, setInputValue] = useState(heading.price);
 
   function handleInputClick(e) {
@@ -14,7 +18,7 @@ export default function ModalCard({ index, handleProceed, currentStock }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleProceed([e.target.inputPledge.value, index]);
+    handleProceed([e.target.inputPledge.value, id]);
   }
   function handleInputValue(e) {
     setInputValue(e.target.value);
@@ -22,7 +26,6 @@ export default function ModalCard({ index, handleProceed, currentStock }) {
 
   return (
     <div
-      key={id}
       className={
         "card modal-card " + (id !== 0 && stock == 0 ? "opacity-50" : "")
       }
